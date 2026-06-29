@@ -1,0 +1,19 @@
+# Python build / packaging
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# Test / tooling caches
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Per-machine Claude Code settings (keep committed settings.json)
+.claude/settings.local.json
+.claude/drift-source

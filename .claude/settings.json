@@ -1,0 +1,146 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.gnupg/**)",
+      "Read(~/.config/gh/**)",
+      "Read(~/.config/gcloud/**)",
+      "Read(~/.netrc)",
+      "Read(~/.docker/**)",
+      "Read(~/.kube/**)",
+      "Read(~/.npmrc)",
+      "Read(~/.pypirc)",
+      "Read(~/.git-credentials)",
+      "Read(~/.password-store/**)",
+      "Read(~/.terraform.d/**)",
+      "Read(~/.cargo/credentials*)",
+      "Read(~/Library/Keychains/**)",
+      "Edit(~/.ssh/**)",
+      "Edit(~/.aws/**)",
+      "Edit(~/.gnupg/**)",
+      "Edit(~/.config/gh/**)",
+      "Edit(~/.config/gcloud/**)",
+      "Edit(~/.netrc)",
+      "Edit(~/.docker/**)",
+      "Edit(~/.kube/**)",
+      "Edit(~/.npmrc)",
+      "Edit(~/.pypirc)",
+      "Edit(~/.git-credentials)",
+      "Edit(~/.password-store/**)",
+      "Edit(~/.terraform.d/**)",
+      "Edit(~/.cargo/credentials*)",
+      "Edit(~/Library/Keychains/**)",
+      "Write(~/.ssh/**)",
+      "Write(~/.aws/**)",
+      "Write(~/.gnupg/**)",
+      "Write(~/.config/gh/**)",
+      "Write(~/.config/gcloud/**)",
+      "Write(~/.netrc)",
+      "Write(~/.docker/**)",
+      "Write(~/.kube/**)",
+      "Write(~/.npmrc)",
+      "Write(~/.pypirc)",
+      "Write(~/.git-credentials)",
+      "Write(~/.password-store/**)",
+      "Write(~/.terraform.d/**)",
+      "Write(~/.cargo/credentials*)",
+      "Write(~/Library/Keychains/**)",
+      "Bash(ssh:*)"
+    ],
+    "ask": [
+      "Edit(.claude/hooks/**)",
+      "Write(.claude/hooks/**)",
+      "Edit(~/.claude/hooks/**)",
+      "Write(~/.claude/hooks/**)"
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "failIfUnavailable": true,
+    "network": {
+      "allowedDomains": [
+        "github.com",
+        "*.github.com",
+        "*.githubusercontent.com",
+        "131.111.94.40",
+        "antigenic-cartography.org",
+        "*.antigenic-cartography.org",
+        "registry.npmjs.org",
+        "*.npmjs.org",
+        "pypi.org",
+        "files.pythonhosted.org",
+        "cran.r-project.org",
+        "*.r-project.org",
+        "bioconductor.org",
+        "*.bioconductor.org",
+        "ncbi.nlm.nih.gov",
+        "*.ncbi.nlm.nih.gov",
+        "ebi.ac.uk",
+        "*.ebi.ac.uk",
+        "gisaid.org",
+        "*.gisaid.org",
+        "uniprot.org",
+        "*.uniprot.org",
+        "rcsb.org",
+        "*.rcsb.org",
+        "who.int",
+        "*.who.int",
+        "cdc.gov",
+        "*.cdc.gov",
+        "ecdc.europa.eu",
+        "*.ecdc.europa.eu",
+        "nih.gov",
+        "*.nih.gov",
+        "gov.uk",
+        "*.gov.uk",
+        "data.gov",
+        "*.data.gov"
+      ]
+    }
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/health-check.py"
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/drift-check.py"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/remote-safety.py"
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/local-safety.py"
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/push-guard.py"
+          }
+        ]
+      },
+      {
+        "matcher": "Read|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/tmp-allow.py"
+          }
+        ]
+      }
+    ]
+  }
+}
