@@ -1,5 +1,8 @@
 # pyaapalette
 
+<!-- aapalette logo (shields.io coloured residues) -->
+![A](https://img.shields.io/static/v1?label=&message=A&color=769214&style=flat-square)![A](https://img.shields.io/static/v1?label=&message=A&color=769214&style=flat-square)![P](https://img.shields.io/static/v1?label=&message=P&color=C15BFD&style=flat-square)![A](https://img.shields.io/static/v1?label=&message=A&color=769214&style=flat-square)![L](https://img.shields.io/static/v1?label=&message=L&color=B5D900&style=flat-square)![E](https://img.shields.io/static/v1?label=&message=E&color=EE3B5C&style=flat-square)![T](https://img.shields.io/static/v1?label=&message=T&color=CC8347&style=flat-square)![T](https://img.shields.io/static/v1?label=&message=T&color=CC8347&style=flat-square)![E](https://img.shields.io/static/v1?label=&message=E&color=EE3B5C&style=flat-square)
+
 Consistent, colour-vision-aware **amino-acid colour palettes** for Python.
 
 `pyaapalette` ships ten amino-acid colour schemes — three new colour-vision-aware
