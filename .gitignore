@@ -17,3 +17,4 @@ venv/
 # Per-machine Claude Code settings (keep committed settings.json)
 .claude/settings.local.json
 .claude/drift-source
+.DS_Store

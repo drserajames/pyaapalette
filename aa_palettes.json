@@ -39,35 +39,35 @@
   },
   "schemes": {
     "hue": {
-      "label": "AApalette hue (normal vision)",
+      "label": "AApalette hue (typical colour vision)",
       "kind": "identity (one colour per residue)",
-      "vision": "normal",
+      "vision": "typical colour vision",
       "source": "This work (aapalette)",
       "min_deltaE": {
-        "normal": 15.0,
-        "deutan": 3.7,
-        "protan": 1.2,
-        "tritan": 6.0
+        "normal": 12.4,
+        "deutan": 3.2,
+        "protan": 1.7,
+        "tritan": 8.3
       },
       "colors": {
-        "A": "#769214",
-        "C": "#9426CC",
+        "A": "#A8E4A0",
+        "C": "#6C4BA1",
         "D": "#8B0000",
         "E": "#EE3B5C",
-        "F": "#C0B15A",
+        "F": "#C7C936",
         "G": "#DCDCDC",
         "H": "#8EB3D1",
-        "I": "#4F7942",
+        "I": "#214C1A",
         "K": "#002FA7",
-        "L": "#B5D900",
+        "L": "#2ADB2A",
         "M": "#3EB489",
         "N": "#947E51",
-        "P": "#C15BFD",
+        "P": "#A44DD7",
         "Q": "#C7A393",
         "R": "#4169E1",
-        "S": "#AD5A45",
-        "T": "#CC8347",
-        "V": "#2E5E4F",
+        "S": "#874B4A",
+        "T": "#CC7228",
+        "V": "#40826D",
         "W": "#FFECB1",
         "Y": "#FFD400"
       },
@@ -77,7 +77,7 @@
         "D": "dark red",
         "E": "eosin",
         "F": "flax",
-        "G": "gainsboro",
+        "G": "grey",
         "H": "horizon blue",
         "I": "ivy",
         "K": "klein blue",
@@ -134,7 +134,7 @@
         "D": "dodger blue",
         "E": "eggplant",
         "F": "falu red",
-        "G": "gainsboro",
+        "G": "grey",
         "H": "hot pink",
         "I": "imperial",
         "K": "king's blue",
@@ -212,7 +212,7 @@
     "clustal": {
       "label": "Clustal X",
       "kind": "property groups",
-      "vision": "normal",
+      "vision": "typical colour vision",
       "source": "Clustal X / Jalview",
       "colors": {
         "A": "#80A0F0",
@@ -240,7 +240,7 @@
     "zappo": {
       "label": "Zappo",
       "kind": "property groups",
-      "vision": "normal",
+      "vision": "typical colour vision",
       "source": "Zappo / Jalview",
       "colors": {
         "I": "#FFAFAF",
@@ -268,7 +268,7 @@
     "taylor": {
       "label": "Taylor",
       "kind": "identity",
-      "vision": "normal",
+      "vision": "typical colour vision",
       "source": "Taylor (1997) / Jalview",
       "colors": {
         "A": "#CCFF00",
@@ -296,7 +296,7 @@
     "lesk": {
       "label": "Lesk",
       "kind": "property groups",
-      "vision": "normal",
+      "vision": "typical colour vision",
       "source": "Lesk, Introduction to Protein Architecture",
       "colors": {
         "G": "#FF8C00",
@@ -324,7 +324,7 @@
     "cinema": {
       "label": "Cinema",
       "kind": "property groups",
-      "vision": "normal",
+      "vision": "typical colour vision",
       "source": "CINEMA (Parry-Smith et al. 1998)",
       "colors": {
         "H": "#6464FF",
@@ -352,7 +352,7 @@
     "rasmol": {
       "label": "RasMol amino",
       "kind": "property groups",
-      "vision": "normal",
+      "vision": "typical colour vision",
       "source": "RasMol amino colour scheme",
       "colors": {
         "D": "#E60A0A",
@@ -380,7 +380,7 @@
     "shapely": {
       "label": "RasMol shapely",
       "kind": "identity",
-      "vision": "normal",
+      "vision": "typical colour vision",
       "source": "RasMol/Jmol shapely (Fletterick Shapely models)",
       "colors": {
         "A": "#8CFF8C",

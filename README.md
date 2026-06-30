@@ -1,7 +1,7 @@
 # pyaapalette
 
 <!-- aapalette logo (shields.io coloured residues) -->
-![A](https://img.shields.io/static/v1?label=&message=A&color=769214&style=flat-square)![A](https://img.shields.io/static/v1?label=&message=A&color=769214&style=flat-square)![P](https://img.shields.io/static/v1?label=&message=P&color=C15BFD&style=flat-square)![A](https://img.shields.io/static/v1?label=&message=A&color=769214&style=flat-square)![L](https://img.shields.io/static/v1?label=&message=L&color=B5D900&style=flat-square)![E](https://img.shields.io/static/v1?label=&message=E&color=EE3B5C&style=flat-square)![T](https://img.shields.io/static/v1?label=&message=T&color=CC8347&style=flat-square)![T](https://img.shields.io/static/v1?label=&message=T&color=CC8347&style=flat-square)![E](https://img.shields.io/static/v1?label=&message=E&color=EE3B5C&style=flat-square)
+![A](https://img.shields.io/static/v1?label=&message=A&color=A8E4A0&style=flat-square)![A](https://img.shields.io/static/v1?label=&message=A&color=A8E4A0&style=flat-square)![P](https://img.shields.io/static/v1?label=&message=P&color=A44DD7&style=flat-square)![A](https://img.shields.io/static/v1?label=&message=A&color=A8E4A0&style=flat-square)![L](https://img.shields.io/static/v1?label=&message=L&color=2ADB2A&style=flat-square)![E](https://img.shields.io/static/v1?label=&message=E&color=EE3B5C&style=flat-square)![T](https://img.shields.io/static/v1?label=&message=T&color=CC7228&style=flat-square)![T](https://img.shields.io/static/v1?label=&message=T&color=CC7228&style=flat-square)![E](https://img.shields.io/static/v1?label=&message=E&color=EE3B5C&style=flat-square)
 
 Consistent, colour-vision-aware **amino-acid colour palettes** for Python.
 
@@ -39,18 +39,18 @@ optional and only needed for the plotting helpers.
 
 | ID | Label | Vision | Source |
 |----|-------|--------|--------|
-| `hue` | AApalette hue (normal vision) | normal | This work (aapalette) |
+| `hue` | AApalette hue (typical colour vision) | typical colour vision | This work (aapalette) |
 | `redgreen` | AApalette red-green CVD safe | deuteranopia & protanopia safe | This work (aapalette) |
 | `tritan` | AApalette tritan CVD safe | tritanopia safe | This work (aapalette) |
-| `clustal` | Clustal X | normal | Clustal X / Jalview |
-| `zappo` | Zappo | normal | Zappo / Jalview |
-| `taylor` | Taylor | normal | Taylor (1997) / Jalview |
-| `lesk` | Lesk | normal | Lesk, *Introduction to Protein Architecture* |
-| `cinema` | Cinema | normal | CINEMA (Parry-Smith et al. 1998) |
-| `rasmol` | RasMol amino | normal | RasMol amino colour scheme |
-| `shapely` | RasMol shapely | normal | RasMol/Jmol shapely (Fletterick Shapely models) |
+| `clustal` | Clustal X | typical colour vision | Clustal X / Jalview |
+| `zappo` | Zappo | typical colour vision | Zappo / Jalview |
+| `taylor` | Taylor | typical colour vision | Taylor (1997) / Jalview |
+| `lesk` | Lesk | typical colour vision | Lesk, *Introduction to Protein Architecture* |
+| `cinema` | Cinema | typical colour vision | CINEMA (Parry-Smith et al. 1998) |
+| `rasmol` | RasMol amino | typical colour vision | RasMol amino colour scheme |
+| `shapely` | RasMol shapely | typical colour vision | RasMol/Jmol shapely (Fletterick Shapely models) |
 
-**Recommended:** `hue` for normal vision, `redgreen` for red-green CVD,
+**Recommended:** `hue` for typical colour vision, `redgreen` for red-green CVD,
 `tritan` for tritan CVD.
 
 ## Usage
