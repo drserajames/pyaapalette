@@ -36,7 +36,7 @@ pytest
 
 ## Provenance of the data
 
-- `hue`, `redgreen`, `tritan` — created by the AApalette project; CC-BY-4.0.
+- `typical`, `redgreen`, `blueyellow` — created by the AApalette project; CC-BY-4.0.
 - `clustal`, `zappo`, `taylor`, `lesk`, `cinema`, `rasmol`, `shapely` —
   community-standard schemes, attributed to their original sources in each
   scheme's `source` field and in the top-level README.

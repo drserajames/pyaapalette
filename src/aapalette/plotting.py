@@ -18,7 +18,7 @@ if TYPE_CHECKING:  # pragma: no cover - typing only
 __all__ = ["to_listed_colormap", "swatch"]
 
 
-def to_listed_colormap(scheme: str = "hue") -> "ListedColormap":
+def to_listed_colormap(scheme: str = "typical") -> "ListedColormap":
     """Return a :class:`~matplotlib.colors.ListedColormap` for ``scheme``.
 
     Colours are listed in canonical residue order
@@ -32,7 +32,7 @@ def to_listed_colormap(scheme: str = "hue") -> "ListedColormap":
 
 
 def swatch(
-    scheme: str = "hue",
+    scheme: str = "typical",
     ncols: int = 5,
     swatch_size: float = 0.9,
     show_names: bool = True,

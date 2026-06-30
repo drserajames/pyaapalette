@@ -5,19 +5,19 @@ Ten amino-acid colour schemes are exposed, all read from a bundled
 packages ``aapalette`` (R) and ``jalaapalette`` (Jalview).
 
 Three schemes are new to this project (the "AApalette" amino-acid colour
-alphabet, released CC-BY-4.0): ``hue`` (normal vision), ``redgreen``
-(deuteranopia & protanopia safe) and ``tritan`` (tritanopia safe). Seven are
+alphabet, released CC-BY-4.0): ``typical`` (normal vision), ``redgreen``
+(deuteranopia & protanopia safe) and ``blueyellow`` (tritanopia safe). Seven are
 community-standard schemes, attributed to their original sources: ``clustal``,
 ``zappo``, ``taylor``, ``lesk``, ``cinema``, ``rasmol`` and ``shapely``.
 
-Recommended schemes: ``hue`` (normal), ``redgreen`` (red-green CVD), ``tritan``
+Recommended schemes: ``typical`` (normal), ``redgreen`` (red-green CVD), ``blueyellow``
 (tritan CVD). No 20-colour palette is safe for every colour-vision deficiency at
 once; for robust figures, pair colour with the residue letter.
 
 Example
 -------
 >>> import aapalette
->>> aapalette.color_for("W", scheme="hue")
+>>> aapalette.color_for("W", scheme="typical")
 '#FFECB1'
 >>> list(aapalette.get_palette("zappo"))[:3]
 ['A', 'C', 'D']
@@ -67,7 +67,7 @@ __all__ = [
 ]
 
 
-def to_listed_colormap(scheme: str = "hue"):
+def to_listed_colormap(scheme: str = "typical"):
     """Return a matplotlib ``ListedColormap`` of ``scheme`` in residue order.
 
     Thin wrapper around :func:`aapalette.plotting.to_listed_colormap`; requires
@@ -78,7 +78,7 @@ def to_listed_colormap(scheme: str = "hue"):
     return _impl(scheme)
 
 
-def swatch(scheme: str = "hue", **kwargs):
+def swatch(scheme: str = "typical", **kwargs):
     """Render a labelled swatch preview of ``scheme``.
 
     Thin wrapper around :func:`aapalette.plotting.swatch`; requires the optional

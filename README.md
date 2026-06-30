@@ -1,7 +1,7 @@
 # pyaapalette
 
 <!-- aapalette logo (shields.io coloured residues) -->
-![A](https://img.shields.io/static/v1?label=&message=A&color=A8E4A0&style=flat-square)![A](https://img.shields.io/static/v1?label=&message=A&color=A8E4A0&style=flat-square)![P](https://img.shields.io/static/v1?label=&message=P&color=A44DD7&style=flat-square)![A](https://img.shields.io/static/v1?label=&message=A&color=A8E4A0&style=flat-square)![L](https://img.shields.io/static/v1?label=&message=L&color=2ADB2A&style=flat-square)![E](https://img.shields.io/static/v1?label=&message=E&color=EE3B5C&style=flat-square)![T](https://img.shields.io/static/v1?label=&message=T&color=CD5700&style=flat-square)![T](https://img.shields.io/static/v1?label=&message=T&color=CD5700&style=flat-square)![E](https://img.shields.io/static/v1?label=&message=E&color=EE3B5C&style=flat-square)
+![A](https://img.shields.io/static/v1?label=&message=A&color=4C6B30&style=flat-square)![A](https://img.shields.io/static/v1?label=&message=A&color=4C6B30&style=flat-square)![P](https://img.shields.io/static/v1?label=&message=P&color=A44DD7&style=flat-square)![A](https://img.shields.io/static/v1?label=&message=A&color=4C6B30&style=flat-square)![L](https://img.shields.io/static/v1?label=&message=L&color=2ADB2A&style=flat-square)![E](https://img.shields.io/static/v1?label=&message=E&color=EE3B5C&style=flat-square)![T](https://img.shields.io/static/v1?label=&message=T&color=CD5700&style=flat-square)![T](https://img.shields.io/static/v1?label=&message=T&color=CD5700&style=flat-square)![E](https://img.shields.io/static/v1?label=&message=E&color=EE3B5C&style=flat-square)
 
 Consistent, colour-vision-aware **amino-acid colour palettes** for Python.
 
@@ -39,9 +39,9 @@ optional and only needed for the plotting helpers.
 
 | ID | Label | Vision | Source |
 |----|-------|--------|--------|
-| `hue` | AApalette hue (typical colour vision) | typical colour vision | This work (aapalette) |
+| `typical` | AApalette typical (typical colour vision) | typical colour vision | This work (aapalette) |
 | `redgreen` | AApalette red-green CVD safe | deuteranopia & protanopia safe | This work (aapalette) |
-| `tritan` | AApalette tritan CVD safe | tritanopia safe | This work (aapalette) |
+| `blueyellow` | AApalette blue-yellow (tritanopia safe) | tritanopia safe | This work (aapalette) |
 | `clustal` | Clustal X | typical colour vision | Clustal X / Jalview |
 | `zappo` | Zappo | typical colour vision | Zappo / Jalview |
 | `taylor` | Taylor | typical colour vision | Taylor (1997) / Jalview |
@@ -50,8 +50,8 @@ optional and only needed for the plotting helpers.
 | `rasmol` | RasMol amino | typical colour vision | RasMol amino colour scheme |
 | `shapely` | RasMol shapely | typical colour vision | RasMol/Jmol shapely (Fletterick Shapely models) |
 
-**Recommended:** `hue` for typical colour vision, `redgreen` for red-green CVD,
-`tritan` for tritan CVD.
+**Recommended:** `typical` for typical colour vision, `redgreen` for red-green CVD,
+`blueyellow` for tritan CVD.
 
 ## Usage
 
@@ -64,15 +64,15 @@ for s in aapalette.list_schemes():
 
 # 2. Get a palette: residue -> hex, in canonical order
 #    (A C D E F G H I K L M N P Q R S T V W Y).
-pal = aapalette.get_palette("hue")
+pal = aapalette.get_palette("typical")
 pal["W"]                       # '#FFECB1'
 
 # Optionally include the documented defaults.
-aapalette.get_palette("hue", include_gap=True, include_unknown=True)
+aapalette.get_palette("typical", include_gap=True, include_unknown=True)
 # -> 20 residues, then X/B/Z/J (#BEBEBE), then '-' (#FFFFFF)
 
 # 3. Scheme metadata (label, source, vision, min_deltaE, names).
-info = aapalette.scheme_info("hue")
+info = aapalette.scheme_info("typical")
 info["min_deltaE"]             # {'normal': 15.0, 'deutan': 3.7, ...}
 info["names"]["Y"]             # 'yellow'
 
@@ -99,7 +99,7 @@ passing straight to sequence-visualisation tools:
 
 ```python
 import logomaker
-logo = logomaker.Logo(df, color_scheme=aapalette.palette_dict("hue"))
+logo = logomaker.Logo(df, color_scheme=aapalette.palette_dict("typical"))
 ```
 
 ### Matplotlib
@@ -114,14 +114,14 @@ import aapalette
 cmap = aapalette.to_listed_colormap("redgreen")
 
 # Render a labelled swatch preview of any scheme.
-fig = aapalette.swatch("hue")
+fig = aapalette.swatch("typical")
 plt.show()
-# fig.savefig("hue.png", dpi=150)
+# fig.savefig("typical.png", dpi=150)
 ```
 
 ## Attribution
 
-The `hue`, `redgreen`, and `tritan` schemes are the **AApalette amino-acid
+The `typical`, `redgreen`, and `blueyellow` schemes are the **AApalette amino-acid
 colour alphabet**, created for this project and released under **CC-BY-4.0**.
 If you use them, please cite the forthcoming methods write-up:
 

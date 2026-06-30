@@ -91,7 +91,7 @@ def list_schemes() -> List[Dict[str, str]]:
 
 
 def get_palette(
-    scheme: str = "hue",
+    scheme: str = "typical",
     include_gap: bool = False,
     include_unknown: bool = False,
 ) -> Dict[str, str]:
@@ -100,7 +100,7 @@ def get_palette(
     Parameters
     ----------
     scheme:
-        A scheme ID (see :func:`list_schemes`). Defaults to ``"hue"``.
+        A scheme ID (see :func:`list_schemes`). Defaults to ``"typical"``.
     include_gap:
         If ``True``, append the gap symbol ``"-"`` mapped to
         ``defaults.gap``.
@@ -153,7 +153,7 @@ def _normalise(residue: str) -> str:
     return residue.upper()
 
 
-def color_for(residue: str, scheme: str = "hue") -> str:
+def color_for(residue: str, scheme: str = "typical") -> str:
     """Return the hex colour for a single ``residue`` under ``scheme``.
 
     Lower-case input is accepted. Unknown/ambiguous codes (``X, B, Z, J``)
@@ -173,7 +173,7 @@ def color_for(residue: str, scheme: str = "hue") -> str:
     return data["defaults"]["unknown_XBZJ"]
 
 
-def palette_dict(scheme: str = "hue") -> Dict[str, str]:
+def palette_dict(scheme: str = "typical") -> Dict[str, str]:
     """Return a plain residue -> hex dict suitable for sequence tools.
 
     This is the mapping to hand to e.g. ``logomaker``'s ``color_scheme``

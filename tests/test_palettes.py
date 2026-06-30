@@ -20,9 +20,9 @@ HEX_RE = re.compile(r"^#[0-9A-F]{6}$")
 
 CANONICAL_RESIDUES = list("ACDEFGHIKLMNPQRSTVWY")
 EXPECTED_SCHEME_IDS = {
-    "hue",
+    "typical",
     "redgreen",
-    "tritan",
+    "blueyellow",
     "clustal",
     "zappo",
     "taylor",
@@ -81,8 +81,8 @@ def test_get_palette_equals_json(raw):
         assert palette == scheme["colors"]
 
 
-def test_default_scheme_is_hue():
-    assert aapalette.get_palette() == aapalette.get_palette("hue")
+def test_default_scheme_is_typical():
+    assert aapalette.get_palette() == aapalette.get_palette("typical")
 
 
 def test_list_schemes_matches_json(raw):
@@ -96,9 +96,9 @@ def test_list_schemes_matches_json(raw):
 
 
 def test_scheme_info_exposes_optional_fields(raw):
-    # hue has min_deltaE + names + note.
-    info = aapalette.scheme_info("hue")
-    assert info["min_deltaE"] == raw["schemes"]["hue"]["min_deltaE"]
+    # typical has min_deltaE + names + note.
+    info = aapalette.scheme_info("typical")
+    assert info["min_deltaE"] == raw["schemes"]["typical"]["min_deltaE"]
     assert info["names"]["W"] == "wheat"
     assert "note" in info
     # clustal has none of the optional fields.
@@ -110,9 +110,9 @@ def test_scheme_info_exposes_optional_fields(raw):
 
 def test_recommended_and_meta(raw):
     assert aapalette.recommended() == raw["recommended"]
-    assert aapalette.recommended()["normal"] == "hue"
+    assert aapalette.recommended()["normal"] == "typical"
     assert aapalette.recommended()["red_green_cvd"] == "redgreen"
-    assert aapalette.recommended()["tritan_cvd"] == "tritan"
+    assert aapalette.recommended()["tritan_cvd"] == "blueyellow"
     assert aapalette.meta() == raw["meta"]
 
 
@@ -120,26 +120,26 @@ def test_recommended_and_meta(raw):
 
 
 def test_color_for_standard_residue(raw):
-    assert aapalette.color_for("A", "hue") == raw["schemes"]["hue"]["colors"]["A"]
+    assert aapalette.color_for("A", "typical") == raw["schemes"]["typical"]["colors"]["A"]
 
 
 def test_color_for_lowercase_accepted():
-    assert aapalette.color_for("a", "hue") == aapalette.color_for("A", "hue")
-    assert aapalette.get_palette("hue")["A"] == aapalette.color_for("a")
+    assert aapalette.color_for("a", "typical") == aapalette.color_for("A", "typical")
+    assert aapalette.get_palette("typical")["A"] == aapalette.color_for("a")
 
 
 @pytest.mark.parametrize("code", ["X", "B", "Z", "J", "x", "b"])
 def test_unknown_codes_resolve_to_grey(code, raw):
-    assert aapalette.color_for(code, "hue") == raw["defaults"]["unknown_XBZJ"]
+    assert aapalette.color_for(code, "typical") == raw["defaults"]["unknown_XBZJ"]
 
 
 @pytest.mark.parametrize("code", ["-", "."])
 def test_gap_codes_resolve_to_gap_colour(code, raw):
-    assert aapalette.color_for(code, "hue") == raw["defaults"]["gap"]
+    assert aapalette.color_for(code, "typical") == raw["defaults"]["gap"]
 
 
 def test_include_gap_and_unknown(raw):
-    palette = aapalette.get_palette("hue", include_gap=True, include_unknown=True)
+    palette = aapalette.get_palette("typical", include_gap=True, include_unknown=True)
     keys = list(palette.keys())
     # 20 standard residues first, in order.
     assert keys[:20] == CANONICAL_RESIDUES
@@ -167,7 +167,7 @@ def test_unknown_scheme_raises():
 
 def test_multichar_residue_raises():
     with pytest.raises(ValueError):
-        aapalette.color_for("AA", "hue")
+        aapalette.color_for("AA", "typical")
 
 
 # --- Optional matplotlib integration ----------------------------------------
@@ -175,9 +175,9 @@ def test_multichar_residue_raises():
 
 def test_to_listed_colormap_order():
     pytest.importorskip("matplotlib")
-    cmap = aapalette.to_listed_colormap("hue")
+    cmap = aapalette.to_listed_colormap("typical")
     assert cmap.N == 20
-    assert cmap.name == "aapalette_hue"
+    assert cmap.name == "aapalette_typical"
 
 
 def test_swatch_returns_figure():
@@ -185,7 +185,7 @@ def test_swatch_returns_figure():
     import matplotlib
 
     matplotlib.use("Agg")
-    fig = aapalette.swatch("tritan")
+    fig = aapalette.swatch("blueyellow")
     assert fig is not None
     # 20 swatch rectangles drawn on the single axes.
     rects = [p for p in fig.axes[0].patches]
