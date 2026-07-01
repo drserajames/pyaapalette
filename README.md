@@ -1,7 +1,7 @@
 # pyaapalette
 
 <!-- aapalette logo (shields.io coloured residues) -->
-![A](https://img.shields.io/static/v1?label=&message=A&color=4C6B30&style=flat-square)![A](https://img.shields.io/static/v1?label=&message=A&color=4C6B30&style=flat-square)![P](https://img.shields.io/static/v1?label=&message=P&color=800080&style=flat-square)![A](https://img.shields.io/static/v1?label=&message=A&color=4C6B30&style=flat-square)![L](https://img.shields.io/static/v1?label=&message=L&color=2ADB2A&style=flat-square)![E](https://img.shields.io/static/v1?label=&message=E&color=EE3B5C&style=flat-square)![T](https://img.shields.io/static/v1?label=&message=T&color=CD5700&style=flat-square)![T](https://img.shields.io/static/v1?label=&message=T&color=CD5700&style=flat-square)![E](https://img.shields.io/static/v1?label=&message=E&color=EE3B5C&style=flat-square)
+![A](https://img.shields.io/static/v1?label=&message=A&color=4C6B30&style=flat-square)![A](https://img.shields.io/static/v1?label=&message=A&color=4C6B30&style=flat-square)![P](https://img.shields.io/static/v1?label=&message=P&color=800080&style=flat-square)![A](https://img.shields.io/static/v1?label=&message=A&color=4C6B30&style=flat-square)![L](https://img.shields.io/static/v1?label=&message=L&color=2ADB2A&style=flat-square)![E](https://img.shields.io/static/v1?label=&message=E&color=FF4D8D&style=flat-square)![T](https://img.shields.io/static/v1?label=&message=T&color=CD5700&style=flat-square)![T](https://img.shields.io/static/v1?label=&message=T&color=CD5700&style=flat-square)![E](https://img.shields.io/static/v1?label=&message=E&color=FF4D8D&style=flat-square)
 
 Consistent, colour-vision-aware **amino-acid colour palettes** for Python.
 

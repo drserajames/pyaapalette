@@ -47,13 +47,13 @@
         "normal": 12.5,
         "deutan": 3.2,
         "protan": 1.9,
-        "tritan": 4.6
+        "tritan": 5.8
       },
       "colors": {
         "A": "#4C6B30",
-        "C": "#FFA6C9",
+        "C": "#FFBCD9",
         "D": "#B81212",
-        "E": "#EE3B5C",
+        "E": "#FF4D8D",
         "F": "#EFBF04",
         "G": "#666666",
         "H": "#1E5DA5",
@@ -73,7 +73,7 @@
       },
       "names": {
         "A": "algae",
-        "C": "carnation pink",
+        "C": "cotton candy",
         "D": "dark red",
         "E": "eosin",
         "F": "forsythia",
